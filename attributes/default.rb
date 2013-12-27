@@ -17,20 +17,17 @@
 # limitations under the License.
 #
 
-case node["platform_family"]
-when "debian"
-  default["imagemagick"]["packages"] = %w(
+default["imagemagick"]["packages"] = value_for_platform_family(
+  "debian" => %w(
     imagemagick
     libmagick-dev
-  )
-when "ubuntu"
-  default["imagemagick"]["packages"] = %w(
+  ),
+  "ubuntu" => %w(
     imagemagick
     libmagick-dev
-  )
-when "suse"
-  default["imagemagick"]["packages"] = %w(
+  ),
+  "suse" => %w(
     ImageMagick
     ImageMagick-devel
   )
-end
+)
