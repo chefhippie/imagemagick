@@ -22,10 +22,6 @@ default["imagemagick"]["packages"] = value_for_platform_family(
     imagemagick
     libmagick-dev
   ),
-  "ubuntu" => %w(
-    imagemagick
-    libmagick-dev
-  ),
   "suse" => %w(
     ImageMagick
     ImageMagick-devel
